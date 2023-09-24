@@ -5,21 +5,12 @@ import TopBar from "../components/TopBar.astro";
 import Footer from "../components/Footer.astro";
 import PlaylistCard from "../components/PlaylistCard.astro";
 import Shelf from "../components/Shelf.astro";
+import MainLayout from "../layouts/MainLayouts.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Home</title>
-  </head>
-  <body>
-    <Nav />
-    <TopBar />
-    <main>
-      <Shelf title="Focus">
+
+<MainLayout>
+      <Shelf title="Focus" showall="Show All">
         <PlaylistCard
           imgPath="https://picsum.photos/id/14/350/350.webp"
           title="Peaceful Piano"
@@ -57,7 +48,7 @@ import Shelf from "../components/Shelf.astro";
         />
       </Shelf>
 
-      <Shelf title="Spotify Playlist">
+      <Shelf title="Spotify Playlist" showall="Show All">
         <PlaylistCard
           imgPath="https://picsum.photos/id/18/350/350.webp"
           title="Peaceful Piano"
@@ -93,12 +84,8 @@ import Shelf from "../components/Shelf.astro";
           title="Peaceful Piano"
           body="Relax and indulge with beautiful piano pieces"
         />
-      </Shelf>
-    </main>
-    <Footer />
-  </body>
-</html>
-
+      </MainLayout>
+    
 <style>
   body {
     display: grid;

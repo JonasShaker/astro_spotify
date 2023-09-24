@@ -1,0 +1,128 @@
+
+
+---
+import Button from "./Button.astro";
+---
+
+<header class="topbar">
+  <menu>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="">
+        <button id="search-button"></button>
+      
+    </div>
+  </menu>
+
+  <div class="button-group">
+    <Button variant="tertiary" size="medium">Sign up</Button>
+    <Button variant="primary" size="medium">Log in</Button>
+  </div>
+</header>
+
+<style>
+  .topbar {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    background: var(--surface-black);
+    color: var(--text-white);
+    padding: var(--space-md) var(--space-xl);
+    height: 4rem;
+  }
+
+  menu {
+    display: flex;
+    gap: var(--space-md);
+    list-style: none;
+  }
+
+  menu button {
+    display: grid;
+    place-content: center;
+    width: var(--space-xl);
+    height: var(--space-xl);
+    border-radius: var(--border-radius-round);
+    background: var(--text-black);
+    color: var(--text-white);
+  }
+
+  button svg {
+    width: var(--space-md);
+    height: var(--space-md);
+  }
+
+  menu button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  input[type="text"], button {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Search container styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field styling */
+#search-input {
+    flex-grow: 2;
+    padding: 10px;
+    border-radius: 25px 0 0 25px;
+}
+
+/* Button styling */
+#search-button {
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+#search-button:hover {
+    background-color: #1aa34a;
+}
+
+  @media (width < 1000px) {
+    menu li:last-child {
+      display: none;
+    }
+  }
+
+  .button-group {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
